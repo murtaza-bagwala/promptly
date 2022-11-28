@@ -1,14 +1,14 @@
-class Tree
+class Trie::Tree
   attr_accessor :root
 
   def insert(key)
     current_node = root
 
-    for index in [0..key.length - 1] do
+    for index in 0..key.length - 1 do
       node = current_node.children[key[index]]
       if node == nil 
-        new_node = Node.new(0, key[0..index])
-        node.children[key[index]] = new_node
+        new_node = Trie::Node.new(0, key[0..index])
+        current_node.children[key[index]] = new_node
         current_node = new_node
       else
         current_node = node
@@ -19,7 +19,7 @@ class Tree
 
   def search(key)
     current_node = root
-    for index in [0..key.length - 1] do
+    for index in 0..key.length - 1 do
       node = current_node.children[key[index]]
       char = key[index]
       if node == nil 
@@ -32,6 +32,6 @@ class Tree
   end 
 
   def root
-    @root ||= Node.new
+    @root ||= Trie::Node.new(0, "root")
   end
 end
