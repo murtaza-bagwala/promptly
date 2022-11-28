@@ -30,6 +30,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem 'redis', '~> 5.0', '>= 5.0.5'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -37,7 +38,6 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 
 group :development, :test do
-  gem 'database_cleaner-active_record', '~> 2.0.1'
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'faker', '~> 2.21.0'
   gem 'pry', '~> 0.14.1'
